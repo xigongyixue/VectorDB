@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/main.dir/main.cpp.o -o main   -L/home/cc/vectorDB/src/lib  -Wl,-rpath,/home/cc/vectorDB/src/lib:/usr/local/lib /home/cc/vectorDB/src/lib/liblogger.so /home/cc/vectorDB/src/lib/libindex.so /home/cc/vectorDB/src/lib/libhttpserver.so /usr/local/lib/libfaiss.so

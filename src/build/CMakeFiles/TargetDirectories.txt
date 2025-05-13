@@ -1,0 +1,14 @@
+/home/cc/vectorDB/src/build/CMakeFiles/edit_cache.dir
+/home/cc/vectorDB/src/build/CMakeFiles/rebuild_cache.dir
+/home/cc/vectorDB/src/build/httpserver/CMakeFiles/httpserver.dir
+/home/cc/vectorDB/src/build/httpserver/CMakeFiles/edit_cache.dir
+/home/cc/vectorDB/src/build/httpserver/CMakeFiles/rebuild_cache.dir
+/home/cc/vectorDB/src/build/index/CMakeFiles/index.dir
+/home/cc/vectorDB/src/build/index/CMakeFiles/edit_cache.dir
+/home/cc/vectorDB/src/build/index/CMakeFiles/rebuild_cache.dir
+/home/cc/vectorDB/src/build/logger/CMakeFiles/logger.dir
+/home/cc/vectorDB/src/build/logger/CMakeFiles/edit_cache.dir
+/home/cc/vectorDB/src/build/logger/CMakeFiles/rebuild_cache.dir
+/home/cc/vectorDB/src/build/test/CMakeFiles/main.dir
+/home/cc/vectorDB/src/build/test/CMakeFiles/edit_cache.dir
+/home/cc/vectorDB/src/build/test/CMakeFiles/rebuild_cache.dir
