@@ -7,9 +7,9 @@ int main() {
     set_log_level(spdlog::level::debug);
     GlobalLogger->info("Global logger initialized");
     
-    int dim = 1;
+    int dim = 1, num_data = 50;
     IndexFactory* globalIndexFactory = getGlobalIndexFactory();
-    globalIndexFactory->init(IndexFactory::IndexType::FLAT, dim);
+    globalIndexFactory->init(IndexFactory::IndexType::HNSW, dim, num_data);
     GlobalLogger->info("Global IndexFactory initialized");
 
     HttpServer server("localhost", 8000);

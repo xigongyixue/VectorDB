@@ -43,8 +43,9 @@ index/CMakeFiles/index.dir/faiss_index.cpp.o: \
  /usr/include/c++/11/bits/range_access.h \
  /usr/include/c++/11/bits/vector.tcc \
  /home/cc/vectorDB/src/include/index/faiss_index.h \
- /usr/local/include/faiss/Index.h /usr/local/include/faiss/MetricType.h \
- /usr/local/include/faiss/impl/platform_macros.h \
+ /home/cc/vectorDB/src/include/faiss/Index.h \
+ /home/cc/vectorDB/src/include/faiss/MetricType.h \
+ /home/cc/vectorDB/src/include/faiss/impl/platform_macros.h \
  /usr/include/c++/11/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

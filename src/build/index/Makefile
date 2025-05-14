@@ -154,6 +154,30 @@ faiss_index.cpp.s:
 	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/faiss_index.cpp.s
 .PHONY : faiss_index.cpp.s
 
+hnswlib_index.o: hnswlib_index.cpp.o
+.PHONY : hnswlib_index.o
+
+# target to build an object file
+hnswlib_index.cpp.o:
+	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/hnswlib_index.cpp.o
+.PHONY : hnswlib_index.cpp.o
+
+hnswlib_index.i: hnswlib_index.cpp.i
+.PHONY : hnswlib_index.i
+
+# target to preprocess a source file
+hnswlib_index.cpp.i:
+	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/hnswlib_index.cpp.i
+.PHONY : hnswlib_index.cpp.i
+
+hnswlib_index.s: hnswlib_index.cpp.s
+.PHONY : hnswlib_index.s
+
+# target to generate assembly for a file
+hnswlib_index.cpp.s:
+	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/hnswlib_index.cpp.s
+.PHONY : hnswlib_index.cpp.s
+
 index_factory.o: index_factory.cpp.o
 .PHONY : index_factory.o
 
@@ -190,6 +214,9 @@ help:
 	@echo "... faiss_index.o"
 	@echo "... faiss_index.i"
 	@echo "... faiss_index.s"
+	@echo "... hnswlib_index.o"
+	@echo "... hnswlib_index.i"
+	@echo "... hnswlib_index.s"
 	@echo "... index_factory.o"
 	@echo "... index_factory.i"
 	@echo "... index_factory.s"

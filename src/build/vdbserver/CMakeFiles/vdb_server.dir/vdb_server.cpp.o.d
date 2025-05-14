@@ -296,6 +296,7 @@ vdbserver/CMakeFiles/vdb_server.dir/vdb_server.cpp.o: \
  /home/cc/vectorDB/src/include/spdlog/version.h \
  /home/cc/vectorDB/src/include/spdlog/spdlog-inl.h \
  /home/cc/vectorDB/src/include/index/index_factory.h \
+ /home/cc/vectorDB/src/include/httpserver/http_server.h \
  /home/cc/vectorDB/src/include/index/faiss_index.h \
  /home/cc/vectorDB/src/include/faiss/Index.h \
  /home/cc/vectorDB/src/include/faiss/MetricType.h \
@@ -306,7 +307,6 @@ vdbserver/CMakeFiles/vdb_server.dir/vdb_server.cpp.o: \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc \
- /home/cc/vectorDB/src/include/httpserver/http_server.h \
  /home/cc/vectorDB/src/include/httpserver/httplib.h \
  /usr/include/arpa/inet.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \

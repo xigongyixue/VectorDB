@@ -1,6 +1,7 @@
 #include "httpserver/http_server.h"
-#include "index/faiss_index.h"
 #include "index/index_factory.h"
+#include "index/faiss_index.h"
+#include "index/hnswlib_index.h"
 #include "logger/logger.h"
 #include "common/constants.h"
 #include <iostream>
@@ -41,8 +42,10 @@ IndexFactory::IndexType HttpServer::getIndexTypeFromRequest(const rapidjson::Doc
     // 获取请求参数中的索引类型
     if (json_request.HasMember(REQUEST_INDEX_TYPE)) {
         std::string index_type_str = json_request[REQUEST_INDEX_TYPE].GetString();
-        if (index_type_str == "FLAT") {
+        if (index_type_str == INDEX_TYPE_FLAT) {
             return IndexFactory::IndexType::FLAT;
+        } else if (index_type_str == INDEX_TYPE_HNSW) {
+            return IndexFactory::IndexType::HNSW;
         }
     }
     return IndexFactory::IndexType::UNKNOWN; 
@@ -103,6 +106,11 @@ void HttpServer::searchHandler(const httplib::Request& req, httplib::Response& r
         case IndexFactory::IndexType::FLAT: {
             FaissIndex* faissIndex = static_cast<FaissIndex*>(index);
             results = faissIndex->search_vectors(query, k);
+            break;
+        }
+        case IndexFactory::IndexType::HNSW: {
+            HNSWLibIndex* hnswIndex = static_cast<HNSWLibIndex*>(index);
+            results = hnswIndex->search_vectors(query, k);
             break;
         }
         // 在此处添加其他索引类型的处理逻辑
@@ -191,6 +199,11 @@ void HttpServer::insertHandler(const httplib::Request& req, httplib::Response& r
         case IndexFactory::IndexType::FLAT: {
             FaissIndex* faissIndex = static_cast<FaissIndex*>(index);
             faissIndex->insert_vectors(data, label);
+            break;
+        }
+        case IndexFactory::IndexType::HNSW: {
+            HNSWLibIndex* hnswIndex = static_cast<HNSWLibIndex*>(index);
+            hnswIndex->insert_vectors(data, label);
             break;
         }
         // 在此处添加其他索引类型的处理逻辑

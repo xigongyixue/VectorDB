@@ -3,9 +3,20 @@
 
 httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/httpserver/http_server.cpp \
   /home/cc/vectorDB/src/include/common/constants.h \
+  /home/cc/vectorDB/src/include/faiss/Index.h \
+  /home/cc/vectorDB/src/include/faiss/MetricType.h \
+  /home/cc/vectorDB/src/include/faiss/impl/platform_macros.h \
+  /home/cc/vectorDB/src/include/hnswlib/bruteforce.h \
+  /home/cc/vectorDB/src/include/hnswlib/hnswalg.h \
+  /home/cc/vectorDB/src/include/hnswlib/hnswlib.h \
+  /home/cc/vectorDB/src/include/hnswlib/space_ip.h \
+  /home/cc/vectorDB/src/include/hnswlib/space_l2.h \
+  /home/cc/vectorDB/src/include/hnswlib/stop_condition.h \
+  /home/cc/vectorDB/src/include/hnswlib/visited_list_pool.h \
   /home/cc/vectorDB/src/include/httpserver/http_server.h \
   /home/cc/vectorDB/src/include/httpserver/httplib.h \
   /home/cc/vectorDB/src/include/index/faiss_index.h \
+  /home/cc/vectorDB/src/include/index/hnswlib_index.h \
   /home/cc/vectorDB/src/include/index/index_factory.h \
   /home/cc/vectorDB/src/include/logger/logger.h \
   /home/cc/vectorDB/src/include/rapidjson/allocators.h \
@@ -186,6 +197,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /usr/include/c++/11/bits/stl_multiset.h \
   /usr/include/c++/11/bits/stl_numeric.h \
   /usr/include/c++/11/bits/stl_pair.h \
+  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/stl_relops.h \
   /usr/include/c++/11/bits/stl_set.h \
@@ -260,6 +272,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/glue_numeric_defs.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/queue \
   /usr/include/c++/11/random \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/regex \
@@ -267,6 +280,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/stack \
   /usr/include/c++/11/stdexcept \
+  /usr/include/c++/11/stdlib.h \
   /usr/include/c++/11/streambuf \
   /usr/include/c++/11/string \
   /usr/include/c++/11/string_view \
@@ -492,33 +506,214 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/include/x86_64-linux-gnu/sys/ucontext.h \
   /usr/include/x86_64-linux-gnu/sys/un.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/adxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/ammintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/amxbf16intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/amxint8intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/amxtileintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx2intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124fmapsintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124vnniwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16vlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bitalgintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512cdintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512dqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512erintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmaintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmavlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512pfintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2vlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmiintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmivlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlbwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vldqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnniintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnnivlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vp2intersectintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vp2intersectvlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqvlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/avxvnniintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/bmi2intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/bmiintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/cetintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/cldemoteintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/clflushoptintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/clwbintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/clzerointrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/cpuid.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/enqcmdintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/f16cintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/fma4intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/fmaintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/fxsrintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/gfniintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/hresetintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/ia32intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/keylockerintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/lwpintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/lzcntintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mm3dnow.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/movdirintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mwaitintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mwaitxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/pconfigintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/pkuintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/popcntintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/prfchwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/rdseedintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/rtmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/serializeintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/sgxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/shaintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
-  /usr/local/include/faiss/Index.h \
-  /usr/local/include/faiss/MetricType.h \
-  /usr/local/include/faiss/impl/platform_macros.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/tbmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/tsxldtrkintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/uintrintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/vaesintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/vpclmulqdqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/waitpkgintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/wbnoinvdintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/wmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/x86gprintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/x86intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xopintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xsavecintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveoptintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xsavesintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xtestintrin.h
 
 
-/usr/local/include/faiss/MetricType.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xsavesintrin.h:
 
-/usr/local/include/faiss/Index.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xopintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/wbnoinvdintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/waitpkgintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/uintrintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tsxldtrkintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tbmintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/sgxintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/rtmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pkuintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pconfigintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mwaitintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mm3dnow.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/lzcntintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/hresetintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/fxsrintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/fma4intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/ia32intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/enqcmdintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/clzerointrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/clwbintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/cetintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/bmiintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avxintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vp2intersectvlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnnivlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnniintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vldqintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/f16cintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlbwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmivlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmavlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmaintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512erintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512dqintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16vlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124vnniwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124fmapsintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx2intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/amxtileintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/adxintrin.h:
 
 /usr/include/x86_64-linux-gnu/sys/syscall.h:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
@@ -529,6 +724,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/popcntintrin.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
@@ -564,6 +761,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/clflushoptintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
@@ -572,9 +771,15 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/res_state.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/vpclmulqdqintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/amxbf16intrin.h:
 
 /usr/include/x86_64-linux-gnu/sys/param.h:
 
@@ -612,7 +817,11 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/keylockerintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
@@ -656,6 +865,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mwaitxintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
@@ -678,6 +889,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/prfchwintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
@@ -691,6 +904,10 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/vaesintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/ammintrin.h:
 
 /usr/include/x86_64-linux-gnu/sys/ucontext.h:
 
@@ -716,31 +933,27 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/include/c++/11/bits/stl_algo.h:
+/usr/include/x86_64-linux-gnu/asm/socket.h:
 
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
-/usr/include/c++/11/ext/atomicity.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
-/usr/include/c++/11/bits/std_abs.h:
-
-/usr/include/c++/11/bits/invoke.h:
-
-/usr/include/c++/11/bits/std_thread.h:
-
-/home/cc/vectorDB/src/include/spdlog/details/periodic_worker-inl.h:
-
-/usr/include/c++/11/iosfwd:
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
 /usr/include/x86_64-linux-gnu/asm/param.h:
 
-/usr/include/c++/11/bits/shared_ptr_base.h:
+/usr/include/x86_64-linux-gnu/asm/errno.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+/usr/include/wctype.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+/usr/include/wchar.h:
 
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avxvnniintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
+
+/usr/include/unistd.h:
 
 /usr/include/c++/11/bits/regex_scanner.h:
 
@@ -754,6 +967,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/gfniintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/c++/11/bits/regex_automaton.tcc:
@@ -761,6 +976,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/spdlog/details/periodic_worker.h:
 
 /usr/include/linux/stddef.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:
 
 /usr/include/c++/11/bits/refwrap.h:
 
@@ -770,11 +987,11 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/parse_numbers.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmi2vlintrin.h:
+
 /usr/include/c++/11/bits/node_handle.h:
 
 /usr/include/c++/11/bits/nested_exception.h:
-
-/usr/include/c++/11/bits/std_function.h:
 
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 
@@ -788,9 +1005,13 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/deque.tcc:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmiintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/net/if.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveoptintrin.h:
 
 /usr/include/c++/11/bits/regex.h:
 
@@ -799,12 +1020,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/c++/11/bits/functional_hash.h:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/c++/11/bits/hash_bytes.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
-
-/usr/include/unistd.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -834,11 +1049,9 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/linux/close_range.h:
 
+/usr/include/c++/11/bits/hash_bytes.h:
+
 /usr/include/c++/11/bits/basic_string.h:
-
-/usr/include/errno.h:
-
-/usr/include/c++/11/climits:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
 
@@ -862,6 +1075,10 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/tr1/special_function_util.h:
 
+/home/cc/vectorDB/src/include/hnswlib/bruteforce.h:
+
+/home/cc/vectorDB/src/include/hnswlib/space_ip.h:
+
 /home/cc/vectorDB/src/include/spdlog/details/os-inl.h:
 
 /usr/include/x86_64-linux-gnu/bits/signum-generic.h:
@@ -870,21 +1087,17 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/asm-generic/sockios.h:
 
-/home/cc/vectorDB/src/include/rapidjson/error/error.h:
+/usr/include/asm-generic/param.h:
 
-/usr/include/c++/11/bits/locale_facets_nonio.h:
+/usr/include/c++/11/debug/assertions.h:
 
-/home/cc/vectorDB/src/include/spdlog/details/null_mutex.h:
+/usr/include/asm-generic/errno.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
-
-/home/cc/vectorDB/src/include/spdlog/logger.h:
-
-/usr/include/c++/11/cstddef:
-
-/home/cc/vectorDB/src/include/spdlog/common-inl.h:
+/home/cc/vectorDB/src/include/rapidjson/allocators.h:
 
 /usr/include/c++/11/bits/functexcept.h:
+
+/home/cc/vectorDB/src/include/hnswlib/hnswalg.h:
 
 /usr/include/c++/11/clocale:
 
@@ -894,73 +1107,53 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/11/unordered_set:
+/usr/include/asm-generic/bitsperlong.h:
 
-/usr/include/c++/11/bits/allocator.h:
+/usr/include/c++/11/map:
 
-/home/cc/vectorDB/src/include/rapidjson/reader.h:
+/usr/include/arpa/nameser.h:
 
-/usr/include/c++/11/bits/vector.tcc:
+/usr/include/c++/11/bits/random.h:
 
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/11/bits/std_mutex.h:
+/usr/include/c++/11/bits/cxxabi_init_exception.h:
 
 /home/cc/vectorDB/src/include/httpserver/http_server.h:
 
-/home/cc/vectorDB/src/include/rapidjson/memorystream.h:
+/usr/include/arpa/inet.h:
 
-/home/cc/vectorDB/src/include/rapidjson/internal/pow10.h:
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/include/c++/11/bits/codecvt.h:
+/usr/include/c++/11/pstl/pstl_config.h:
+
+/usr/include/c++/11/bits/locale_conv.h:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
+/home/cc/vectorDB/src/include/hnswlib/stop_condition.h:
 
 /usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
-/usr/include/c++/11/bits/regex_constants.h:
+/usr/include/c++/11/unordered_set:
 
-/usr/include/wchar.h:
+/usr/include/c++/11/bits/allocator.h:
+
+/usr/include/c++/11/bits/regex_constants.h:
 
 /home/cc/vectorDB/src/include/rapidjson/internal/dtoa.h:
 
-/home/cc/vectorDB/src/include/spdlog/details/log_msg.h:
+/home/cc/vectorDB/src/include/rapidjson/internal/clzll.h:
 
-/home/cc/vectorDB/src/include/httpserver/httplib.h:
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
-/home/cc/vectorDB/src/httpserver/http_server.cpp:
+/usr/include/c++/11/ext/new_allocator.h:
 
-/usr/include/c++/11/bitset:
+/home/cc/vectorDB/src/include/rapidjson/internal/biginteger.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/wmmintrin.h:
 
-/usr/include/c++/11/cstring:
-
-/usr/include/c++/11/bits/atomic_lockfree_defines.h:
-
-/home/cc/vectorDB/src/include/rapidjson/stream.h:
-
-/home/cc/vectorDB/src/include/rapidjson/writer.h:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/linux/param.h:
-
-/usr/include/c++/11/bits/string_view.tcc:
-
-/usr/include/c++/11/bits/basic_string.tcc:
-
-/usr/include/c++/11/mutex:
-
-/usr/include/c++/11/bits/stl_vector.h:
-
-/home/cc/vectorDB/src/include/common/constants.h:
-
-/usr/include/stdio.h:
-
-/home/cc/vectorDB/src/include/rapidjson/internal/diyfp.h:
+/usr/include/c++/11/bits/uses_allocator.h:
 
 /usr/include/c++/11/bits/charconv.h:
 
@@ -968,13 +1161,11 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/stdc-predef.h:
 
-/home/cc/vectorDB/src/include/rapidjson/internal/biginteger.h:
-
-/usr/include/c++/11/bits/uses_allocator.h:
-
 /usr/include/c++/11/bits/locale_classes.h:
 
 /usr/include/c++/11/bits/postypes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bitalgintrin.h:
 
 /usr/include/asm-generic/socket.h:
 
@@ -984,17 +1175,135 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/spdlog/spdlog.h:
 
-/home/cc/vectorDB/src/include/rapidjson/allocators.h:
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
-/usr/include/c++/11/debug/assertions.h:
+/home/cc/vectorDB/src/include/rapidjson/stream.h:
 
-/usr/include/asm-generic/errno.h:
+/usr/include/c++/11/bits/codecvt.h:
+
+/home/cc/vectorDB/src/include/rapidjson/internal/pow10.h:
 
 /home/cc/vectorDB/src/include/rapidjson/internal/meta.h:
 
 /usr/include/c++/11/bits/exception.h:
 
-/usr/include/c++/11/stack:
+/usr/include/x86_64-linux-gnu/bits/statx.h:
+
+/usr/include/c++/11/bits/ios_base.h:
+
+/home/cc/vectorDB/src/include/rapidjson/encodedstream.h:
+
+/usr/include/c++/11/cstdint:
+
+/home/cc/vectorDB/src/include/rapidjson/internal/stack.h:
+
+/home/cc/vectorDB/src/include/rapidjson/internal/diyfp.h:
+
+/home/cc/vectorDB/src/include/rapidjson/error/error.h:
+
+/home/cc/vectorDB/src/include/spdlog/details/log_msg.h:
+
+/home/cc/vectorDB/src/include/faiss/impl/platform_macros.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/cldemoteintrin.h:
+
+/home/cc/vectorDB/src/include/index/index_factory.h:
+
+/home/cc/vectorDB/src/include/rapidjson/internal/strtod.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
+/usr/include/c++/11/tr1/beta_function.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/home/cc/vectorDB/src/include/spdlog/formatter.h:
+
+/usr/include/c++/11/ratio:
+
+/home/cc/vectorDB/src/include/rapidjson/rapidjson.h:
+
+/usr/include/c++/11/bits/stl_uninitialized.h:
+
+/home/cc/vectorDB/src/include/httpserver/httplib.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/c++/11/bits/stl_queue.h:
+
+/usr/include/c++/11/mutex:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512cdintrin.h:
+
+/usr/include/c++/11/bits/stl_vector.h:
+
+/home/cc/vectorDB/src/include/common/constants.h:
+
+/usr/include/stdio.h:
+
+/home/cc/vectorDB/src/include/index/hnswlib_index.h:
+
+/home/cc/vectorDB/src/httpserver/http_server.cpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xsavecintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/serializeintrin.h:
+
+/usr/include/c++/11/bitset:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/x86intrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/c++/11/cstring:
+
+/usr/include/c++/11/bits/predefined_ops.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/fmaintrin.h:
+
+/home/cc/vectorDB/src/include/index/faiss_index.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/movdirintrin.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+
+/usr/include/c++/11/bits/exception_ptr.h:
+
+/home/cc/vectorDB/src/include/hnswlib/hnswlib.h:
+
+/usr/include/x86_64-linux-gnu/sys/mman.h:
+
+/usr/include/c++/11/ext/type_traits.h:
+
+/home/cc/vectorDB/src/include/rapidjson/encodings.h:
+
+/home/cc/vectorDB/src/include/spdlog/details/log_msg-inl.h:
+
+/usr/include/endian.h:
+
+/usr/include/assert.h:
+
+/usr/include/c++/11/set:
+
+/home/cc/vectorDB/src/include/hnswlib/visited_list_pool.h:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
+
+/usr/include/c++/11/bits/char_traits.h:
+
+/usr/include/c++/11/bits/alloc_traits.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
+
+/usr/include/c++/11/functional:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
 /usr/include/c++/11/bits/allocated_ptr.h:
 
@@ -1012,37 +1321,37 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/spdlog/sinks/sink.h:
 
-/usr/include/x86_64-linux-gnu/bits/statx.h:
+/home/cc/vectorDB/src/include/rapidjson/memorystream.h:
 
-/usr/include/c++/11/bits/ios_base.h:
+/usr/include/linux/param.h:
 
-/home/cc/vectorDB/src/include/rapidjson/encodedstream.h:
+/usr/include/c++/11/bits/basic_string.tcc:
 
-/usr/include/c++/11/bits/predefined_ops.h:
+/usr/include/c++/11/bits/string_view.tcc:
 
-/home/cc/vectorDB/src/include/index/faiss_index.h:
+/usr/include/c++/11/bits/std_function.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+/home/cc/vectorDB/src/include/rapidjson/reader.h:
 
-/usr/include/c++/11/bits/exception_ptr.h:
+/usr/include/c++/11/bits/vector.tcc:
 
-/home/cc/vectorDB/src/include/rapidjson/encodings.h:
+/home/cc/vectorDB/src/include/rapidjson/writer.h:
 
-/home/cc/vectorDB/src/include/spdlog/details/log_msg-inl.h:
+/usr/include/linux/posix_types.h:
 
-/home/cc/vectorDB/src/include/rapidjson/internal/clzll.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/rdseedintrin.h:
 
-/home/cc/vectorDB/src/include/rapidjson/internal/stack.h:
+/usr/include/c++/11/bits/locale_facets_nonio.h:
 
-/usr/include/c++/11/cstdint:
+/home/cc/vectorDB/src/include/spdlog/details/null_mutex.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
-/usr/include/c++/11/ext/new_allocator.h:
+/home/cc/vectorDB/src/include/spdlog/logger.h:
 
-/usr/include/c++/11/bits/stl_uninitialized.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqvlintrin.h:
 
-/home/cc/vectorDB/src/include/rapidjson/rapidjson.h:
+/usr/include/c++/11/stack:
 
 /usr/include/x86_64-linux-gnu/sys/un.h:
 
@@ -1064,27 +1373,39 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/spdlog/details/backtracer-inl.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/lwpintrin.h:
+
+/usr/include/c++/11/stdlib.h:
+
 /home/cc/vectorDB/src/include/rapidjson/document.h:
 
 /home/cc/vectorDB/src/include/spdlog/details/registry-inl.h:
 
-/usr/local/include/faiss/impl/platform_macros.h:
+/home/cc/vectorDB/src/include/hnswlib/space_l2.h:
 
 /home/cc/vectorDB/src/include/spdlog/details/os.h:
 
 /usr/include/c++/11/initializer_list:
 
-/home/cc/vectorDB/src/include/index/index_factory.h:
-
-/home/cc/vectorDB/src/include/rapidjson/internal/strtod.h:
-
-/usr/include/c++/11/bits/locale_facets_nonio.tcc:
-
-/usr/include/c++/11/tr1/beta_function.tcc:
-
 /usr/include/x86_64-linux-gnu/asm/unistd_64.h:
 
+/home/cc/vectorDB/src/include/faiss/MetricType.h:
+
 /home/cc/vectorDB/src/include/spdlog/fmt/bundled/format.h:
+
+/home/cc/vectorDB/src/include/spdlog/details/periodic_worker-inl.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/cpuid.h:
+
+/usr/include/c++/11/iosfwd:
+
+/usr/include/c++/11/bits/invoke.h:
+
+/usr/include/c++/11/bits/std_abs.h:
+
+/home/cc/vectorDB/src/include/spdlog/common-inl.h:
+
+/usr/include/c++/11/cstddef:
 
 /usr/include/x86_64-linux-gnu/asm/unistd.h:
 
@@ -1093,20 +1414,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/rapidjson/internal/itoa.h:
 
 /home/cc/vectorDB/src/include/spdlog/details/synchronous_factory.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/c++/11/cwchar:
-
-/usr/include/c++/11/bits/random.h:
-
-/usr/include/c++/11/bits/cxxabi_init_exception.h:
-
-/usr/include/arpa/inet.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
-
-/usr/include/c++/11/pstl/pstl_config.h:
 
 /home/cc/vectorDB/src/include/spdlog/fmt/bundled/base.h:
 
@@ -1130,14 +1437,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/stl_set.h:
 
-/usr/include/time.h:
-
-/usr/include/c++/11/bits/sstream.tcc:
-
-/usr/include/c++/11/bits/quoted_string.h:
-
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
-
 /usr/include/c++/11/bits/istream.tcc:
 
 /home/cc/vectorDB/src/include/spdlog/sinks/ansicolor_sink.h:
@@ -1146,37 +1445,65 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/regex:
 
-/usr/include/c++/11/bits/locale_conv.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
-/usr/include/arpa/nameser.h:
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
 
-/usr/include/endian.h:
+/usr/include/x86_64-linux-gnu/asm/types.h:
 
-/usr/include/c++/11/set:
+/usr/include/c++/11/bits/specfun.h:
 
-/usr/include/assert.h:
+/usr/include/features.h:
 
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/c++/11/map:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:
 
 /usr/include/c++/11/bits/regex_scanner.tcc:
 
-/usr/include/asm-generic/param.h:
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/include/c++/11/bits/algorithmfwd.h:
+/usr/include/c++/11/cwchar:
 
-/usr/include/c++/11/bits/char_traits.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
 
-/usr/include/c++/11/bits/alloc_traits.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
-/usr/include/asm-generic/posix_types.h:
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
 
-/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
+/usr/include/c++/11/bits/shared_ptr_base.h:
 
-/usr/include/c++/11/functional:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xtestintrin.h:
+
+/usr/include/time.h:
+
+/usr/include/c++/11/bits/sstream.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/c++/11/bits/std_mutex.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512pfintrin.h:
+
+/usr/include/c++/11/bits/std_thread.h:
+
+/usr/include/c++/11/climits:
+
+/usr/include/errno.h:
+
+/usr/include/c++/11/bits/stl_algo.h:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/c++/11/ext/atomicity.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vp2intersectintrin.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
+/usr/include/c++/11/bits/stl_algobase.h:
 
 /usr/include/c++/11/bits/stl_construct.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/x86gprintrin.h:
 
 /usr/include/c++/11/numeric:
 
@@ -1185,6 +1512,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/alloca.h:
 
 /usr/include/c++/11/ctime:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/bmi2intrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
@@ -1195,6 +1524,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/include/x86_64-linux-gnu/bits/in.h:
+
+/home/cc/vectorDB/src/include/faiss/Index.h:
 
 /usr/include/stdint.h:
 
@@ -1240,6 +1571,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/stl_pair.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/shaintrin.h:
+
 /usr/include/c++/11/bits/stl_stack.h:
 
 /usr/include/c++/11/bits/stringfwd.h:
@@ -1247,6 +1580,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/spdlog/details/backtracer.h:
 
 /usr/include/c++/11/bits/this_thread_sleep.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/amxint8intrin.h:
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
@@ -1278,11 +1613,11 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/cerrno:
 
+/usr/include/arpa/nameser_compat.h:
+
 /home/cc/vectorDB/src/include/spdlog/details/circular_q.h:
 
 /home/cc/vectorDB/src/include/spdlog/details/console_globals.h:
-
-/usr/include/arpa/nameser_compat.h:
 
 /usr/include/c++/11/chrono:
 
@@ -1316,11 +1651,13 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/ext/numeric_traits.h:
 
-/usr/include/x86_64-linux-gnu/sys/mman.h:
+/usr/include/c++/11/tuple:
 
-/usr/include/c++/11/ext/type_traits.h:
+/usr/include/c++/11/ext/string_conversions.h:
 
 /usr/include/c++/11/fstream:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqintrin.h:
 
 /usr/include/c++/11/bit:
 
@@ -1336,6 +1673,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/limits:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
+
 /usr/include/c++/11/ostream:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
@@ -1348,13 +1687,13 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/pstl/glue_memory_defs.h:
 
-/usr/include/c++/11/ratio:
-
-/usr/include/c++/11/sstream:
+/usr/include/c++/11/queue:
 
 /usr/include/x86_64-linux-gnu/sys/socket.h:
 
 /usr/include/c++/11/stdexcept:
+
+/usr/include/c++/11/sstream:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -1402,15 +1741,9 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
 
-/usr/include/c++/11/ext/string_conversions.h:
-
-/usr/include/c++/11/tuple:
-
 /usr/include/c++/11/type_traits:
 
 /usr/include/c++/11/typeinfo:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/c++/11/condition_variable:
 
@@ -1448,11 +1781,11 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/resolv.h:
 
-/usr/include/strings.h:
-
 /home/cc/vectorDB/src/include/rapidjson/internal/ieee754.h:
 
 /home/cc/vectorDB/src/include/spdlog/version.h:
+
+/usr/include/strings.h:
 
 /usr/include/rpc/netdb.h:
 
@@ -1461,33 +1794,3 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/spdlog/common.h:
 
 /usr/include/stdlib.h:
-
-/usr/include/wctype.h:
-
-/usr/include/c++/11/bits/stl_algobase.h:
-
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types.h:
-
-/usr/include/x86_64-linux-gnu/asm/socket.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/home/cc/vectorDB/src/include/spdlog/formatter.h:
-
-/usr/include/x86_64-linux-gnu/asm/sockios.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
-
-/usr/include/c++/11/bits/specfun.h:
-
-/usr/include/features.h:
-
-/usr/include/x86_64-linux-gnu/asm/types.h:

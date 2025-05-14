@@ -204,12 +204,12 @@ httpserver/CMakeFiles/httpserver.dir/clean:
 index/CMakeFiles/index.dir/all:
 	$(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/depend
 	$(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=3,4,5 "Built target index"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=3,4,5,6 "Built target index"
 .PHONY : index/CMakeFiles/index.dir/all
 
 # Build rule for subdir invocation for target.
 index/CMakeFiles/index.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 index/CMakeFiles/index.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 0
 .PHONY : index/CMakeFiles/index.dir/rule
@@ -235,7 +235,7 @@ index/CMakeFiles/index.dir/clean:
 logger/CMakeFiles/logger.dir/all:
 	$(MAKE) $(MAKESILENT) -f logger/CMakeFiles/logger.dir/build.make logger/CMakeFiles/logger.dir/depend
 	$(MAKE) $(MAKESILENT) -f logger/CMakeFiles/logger.dir/build.make logger/CMakeFiles/logger.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=6,7 "Built target logger"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=7,8 "Built target logger"
 .PHONY : logger/CMakeFiles/logger.dir/all
 
 # Build rule for subdir invocation for target.
@@ -268,12 +268,12 @@ vdbserver/CMakeFiles/vdb_server.dir/all: index/CMakeFiles/index.dir/all
 vdbserver/CMakeFiles/vdb_server.dir/all: logger/CMakeFiles/logger.dir/all
 	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=8,9 "Built target vdb_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=9,10 "Built target vdb_server"
 .PHONY : vdbserver/CMakeFiles/vdb_server.dir/all
 
 # Build rule for subdir invocation for target.
 vdbserver/CMakeFiles/vdb_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vdbserver/CMakeFiles/vdb_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 0
 .PHONY : vdbserver/CMakeFiles/vdb_server.dir/rule

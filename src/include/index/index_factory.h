@@ -1,6 +1,5 @@
 #pragma once
 
-#include "index/faiss_index.h"
 #include <map>
 
 // 管理不同的向量索引类型
@@ -9,6 +8,7 @@ class IndexFactory {
 
         enum class IndexType {
             FLAT,
+            HNSW,
             UNKNOWN = -1 
         };
 
@@ -17,7 +17,7 @@ class IndexFactory {
             IP
         };
     
-        void init(IndexType type, int dim, MetricType  metric = MetricType::L2);
+        void init(IndexType type, int dim, int num_data = 0, MetricType metric = MetricType::L2);
         void* getIndex(IndexType type) const;
 
     private:
