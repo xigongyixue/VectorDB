@@ -156,17 +156,17 @@ logger/fast:
 .PHONY : logger/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named vdb_server
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+vdb_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vdb_server
+.PHONY : vdb_server
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/build
-.PHONY : main/fast
+vdb_server/fast:
+	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/build
+.PHONY : vdb_server/fast
 
 # Help Target
 help:
@@ -179,7 +179,7 @@ help:
 	@echo "... httpserver"
 	@echo "... index"
 	@echo "... logger"
-	@echo "... main"
+	@echo "... vdb_server"
 .PHONY : help
 
 

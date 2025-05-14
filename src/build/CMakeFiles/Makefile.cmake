@@ -14,7 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/cc/vectorDB/src/httpserver/CMakeLists.txt"
   "/home/cc/vectorDB/src/index/CMakeLists.txt"
   "/home/cc/vectorDB/src/logger/CMakeLists.txt"
-  "/home/cc/vectorDB/src/test/CMakeLists.txt"
+  "/home/cc/vectorDB/src/vdbserver/CMakeLists.txt"
   "/root/software/cmake/share/cmake-3.31/Modules/CMakeCInformation.cmake"
   "/root/software/cmake/share/cmake-3.31/Modules/CMakeCXXInformation.cmake"
   "/root/software/cmake/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake"
@@ -61,7 +61,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "httpserver/CMakeFiles/CMakeDirectoryInformation.cmake"
   "index/CMakeFiles/CMakeDirectoryInformation.cmake"
   "logger/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "test/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "vdbserver/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -69,5 +69,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "httpserver/CMakeFiles/httpserver.dir/DependInfo.cmake"
   "index/CMakeFiles/index.dir/DependInfo.cmake"
   "logger/CMakeFiles/logger.dir/DependInfo.cmake"
-  "test/CMakeFiles/main.dir/DependInfo.cmake"
+  "vdbserver/CMakeFiles/vdb_server.dir/DependInfo.cmake"
   )

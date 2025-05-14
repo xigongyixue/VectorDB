@@ -255,13 +255,13 @@ src_IS_TOP_LEVEL:STATIC=ON
 src_SOURCE_DIR:STATIC=/home/cc/vectorDB/src
 
 //Value Computed by CMake
-test_BINARY_DIR:STATIC=/home/cc/vectorDB/src/build/test
+test_BINARY_DIR:STATIC=/home/cc/vectorDB/src/build/vdbserver
 
 //Value Computed by CMake
 test_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-test_SOURCE_DIR:STATIC=/home/cc/vectorDB/src/test
+test_SOURCE_DIR:STATIC=/home/cc/vectorDB/src/vdbserver
 
 
 ########################

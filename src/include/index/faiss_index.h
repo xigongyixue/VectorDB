@@ -7,7 +7,7 @@ class FaissIndex {
     public:
         FaissIndex(faiss::Index* index);
 
-        // 将向量数据和标签写入索引中
+        // 将单个向量数据和标签写入索引中
         void insert_vectors(const std::vector<float>& data, uint64_t label);
 
         // 查询与待查询向量最近邻的K个向量

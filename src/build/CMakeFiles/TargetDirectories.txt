@@ -9,6 +9,6 @@
 /home/cc/vectorDB/src/build/logger/CMakeFiles/logger.dir
 /home/cc/vectorDB/src/build/logger/CMakeFiles/edit_cache.dir
 /home/cc/vectorDB/src/build/logger/CMakeFiles/rebuild_cache.dir
-/home/cc/vectorDB/src/build/test/CMakeFiles/main.dir
-/home/cc/vectorDB/src/build/test/CMakeFiles/edit_cache.dir
-/home/cc/vectorDB/src/build/test/CMakeFiles/rebuild_cache.dir
+/home/cc/vectorDB/src/build/vdbserver/CMakeFiles/vdb_server.dir
+/home/cc/vectorDB/src/build/vdbserver/CMakeFiles/edit_cache.dir
+/home/cc/vectorDB/src/build/vdbserver/CMakeFiles/rebuild_cache.dir

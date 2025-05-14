@@ -66,28 +66,28 @@ CMAKE_BINARY_DIR = /home/cc/vectorDB/src/build
 all: httpserver/all
 all: index/all
 all: logger/all
-all: test/all
+all: vdbserver/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: httpserver/codegen
 codegen: index/codegen
 codegen: logger/codegen
-codegen: test/codegen
+codegen: vdbserver/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
 preinstall: httpserver/preinstall
 preinstall: index/preinstall
 preinstall: logger/preinstall
-preinstall: test/preinstall
+preinstall: vdbserver/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: httpserver/clean
 clean: index/clean
 clean: logger/clean
-clean: test/clean
+clean: vdbserver/clean
 .PHONY : clean
 
 #=============================================================================
@@ -148,23 +148,23 @@ logger/clean: logger/CMakeFiles/logger.dir/clean
 .PHONY : logger/clean
 
 #=============================================================================
-# Directory level rules for directory test
+# Directory level rules for directory vdbserver
 
 # Recursive "all" directory target.
-test/all: test/CMakeFiles/main.dir/all
-.PHONY : test/all
+vdbserver/all: vdbserver/CMakeFiles/vdb_server.dir/all
+.PHONY : vdbserver/all
 
 # Recursive "codegen" directory target.
-test/codegen: test/CMakeFiles/main.dir/codegen
-.PHONY : test/codegen
+vdbserver/codegen: vdbserver/CMakeFiles/vdb_server.dir/codegen
+.PHONY : vdbserver/codegen
 
 # Recursive "preinstall" directory target.
-test/preinstall:
-.PHONY : test/preinstall
+vdbserver/preinstall:
+.PHONY : vdbserver/preinstall
 
 # Recursive "clean" directory target.
-test/clean: test/CMakeFiles/main.dir/clean
-.PHONY : test/clean
+vdbserver/clean: vdbserver/CMakeFiles/vdb_server.dir/clean
+.PHONY : vdbserver/clean
 
 #=============================================================================
 # Target rules for target httpserver/CMakeFiles/httpserver.dir
@@ -260,37 +260,37 @@ logger/CMakeFiles/logger.dir/clean:
 .PHONY : logger/CMakeFiles/logger.dir/clean
 
 #=============================================================================
-# Target rules for target test/CMakeFiles/main.dir
+# Target rules for target vdbserver/CMakeFiles/vdb_server.dir
 
 # All Build rule for target.
-test/CMakeFiles/main.dir/all: httpserver/CMakeFiles/httpserver.dir/all
-test/CMakeFiles/main.dir/all: index/CMakeFiles/index.dir/all
-test/CMakeFiles/main.dir/all: logger/CMakeFiles/logger.dir/all
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=8,9 "Built target main"
-.PHONY : test/CMakeFiles/main.dir/all
+vdbserver/CMakeFiles/vdb_server.dir/all: httpserver/CMakeFiles/httpserver.dir/all
+vdbserver/CMakeFiles/vdb_server.dir/all: index/CMakeFiles/index.dir/all
+vdbserver/CMakeFiles/vdb_server.dir/all: logger/CMakeFiles/logger.dir/all
+	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/depend
+	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=8,9 "Built target vdb_server"
+.PHONY : vdbserver/CMakeFiles/vdb_server.dir/all
 
 # Build rule for subdir invocation for target.
-test/CMakeFiles/main.dir/rule: cmake_check_build_system
+vdbserver/CMakeFiles/vdb_server.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vdbserver/CMakeFiles/vdb_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cc/vectorDB/src/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/main.dir/rule
+.PHONY : vdbserver/CMakeFiles/vdb_server.dir/rule
 
 # Convenience name for target.
-main: test/CMakeFiles/main.dir/rule
-.PHONY : main
+vdb_server: vdbserver/CMakeFiles/vdb_server.dir/rule
+.PHONY : vdb_server
 
 # codegen rule for target.
-test/CMakeFiles/main.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/codegen
-.PHONY : test/CMakeFiles/main.dir/codegen
+vdbserver/CMakeFiles/vdb_server.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/codegen
+.PHONY : vdbserver/CMakeFiles/vdb_server.dir/codegen
 
 # clean rule for target.
-test/CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/main.dir/build.make test/CMakeFiles/main.dir/clean
-.PHONY : test/CMakeFiles/main.dir/clean
+vdbserver/CMakeFiles/vdb_server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/clean
+.PHONY : vdbserver/CMakeFiles/vdb_server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
