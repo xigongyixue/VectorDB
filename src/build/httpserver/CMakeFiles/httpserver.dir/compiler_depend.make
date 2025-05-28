@@ -3,6 +3,7 @@
 
 httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/httpserver/http_server.cpp \
   /home/cc/vectorDB/src/include/common/constants.h \
+  /home/cc/vectorDB/src/include/database/vector_database.h \
   /home/cc/vectorDB/src/include/faiss/Index.h \
   /home/cc/vectorDB/src/include/faiss/MetricType.h \
   /home/cc/vectorDB/src/include/faiss/impl/platform_macros.h \
@@ -18,6 +19,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /home/cc/vectorDB/src/include/index/faiss_index.h \
   /home/cc/vectorDB/src/include/index/hnswlib_index.h \
   /home/cc/vectorDB/src/include/index/index_factory.h \
+  /home/cc/vectorDB/src/include/index/scalar_storage.h \
   /home/cc/vectorDB/src/include/logger/logger.h \
   /home/cc/vectorDB/src/include/rapidjson/allocators.h \
   /home/cc/vectorDB/src/include/rapidjson/document.h \
@@ -229,6 +231,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /usr/include/c++/11/cmath \
   /usr/include/c++/11/condition_variable \
   /usr/include/c++/11/csignal \
+  /usr/include/c++/11/cstdarg \
   /usr/include/c++/11/cstddef \
   /usr/include/c++/11/cstdint \
   /usr/include/c++/11/cstdio \
@@ -266,6 +269,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/new \
   /usr/include/c++/11/numeric \
+  /usr/include/c++/11/optional \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/pstl/glue_algorithm_defs.h \
@@ -332,6 +336,54 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
   /usr/include/netinet/tcp.h \
   /usr/include/pthread.h \
   /usr/include/resolv.h \
+  /usr/include/rocksdb/advanced_options.h \
+  /usr/include/rocksdb/attribute_groups.h \
+  /usr/include/rocksdb/block_cache_trace_writer.h \
+  /usr/include/rocksdb/cache.h \
+  /usr/include/rocksdb/cleanable.h \
+  /usr/include/rocksdb/compaction_job_stats.h \
+  /usr/include/rocksdb/comparator.h \
+  /usr/include/rocksdb/compression_type.h \
+  /usr/include/rocksdb/configurable.h \
+  /usr/include/rocksdb/customizable.h \
+  /usr/include/rocksdb/data_structure.h \
+  /usr/include/rocksdb/db.h \
+  /usr/include/rocksdb/env.h \
+  /usr/include/rocksdb/file_checksum.h \
+  /usr/include/rocksdb/functor_wrapper.h \
+  /usr/include/rocksdb/io_status.h \
+  /usr/include/rocksdb/iterator.h \
+  /usr/include/rocksdb/iterator_base.h \
+  /usr/include/rocksdb/listener.h \
+  /usr/include/rocksdb/memory_allocator.h \
+  /usr/include/rocksdb/memtablerep.h \
+  /usr/include/rocksdb/metadata.h \
+  /usr/include/rocksdb/multi_scan.h \
+  /usr/include/rocksdb/options.h \
+  /usr/include/rocksdb/port_defs.h \
+  /usr/include/rocksdb/rocksdb_namespace.h \
+  /usr/include/rocksdb/slice.h \
+  /usr/include/rocksdb/snapshot.h \
+  /usr/include/rocksdb/sst_file_writer.h \
+  /usr/include/rocksdb/sst_partitioner.h \
+  /usr/include/rocksdb/status.h \
+  /usr/include/rocksdb/system_clock.h \
+  /usr/include/rocksdb/table_properties.h \
+  /usr/include/rocksdb/table_reader_caller.h \
+  /usr/include/rocksdb/thread_status.h \
+  /usr/include/rocksdb/trace_reader_writer.h \
+  /usr/include/rocksdb/trace_record.h \
+  /usr/include/rocksdb/transaction_log.h \
+  /usr/include/rocksdb/types.h \
+  /usr/include/rocksdb/universal_compaction.h \
+  /usr/include/rocksdb/user_write_callback.h \
+  /usr/include/rocksdb/utilities/table_properties_collectors.h \
+  /usr/include/rocksdb/utilities/write_batch_with_index.h \
+  /usr/include/rocksdb/version.h \
+  /usr/include/rocksdb/wide_columns.h \
+  /usr/include/rocksdb/write_batch.h \
+  /usr/include/rocksdb/write_batch_base.h \
+  /usr/include/rocksdb/write_buffer_manager.h \
   /usr/include/rpc/netdb.h \
   /usr/include/sched.h \
   /usr/include/signal.h \
@@ -643,8 +695,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/hresetintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/fxsrintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/fma4intrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/ia32intrin.h:
@@ -683,23 +733,15 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmaintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512erintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512dqintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bwintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16vlintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16intrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124vnniwintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124fmapsintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h:
 
@@ -759,8 +801,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/clflushoptintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
@@ -796,8 +836,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
@@ -955,13 +993,83 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/unistd.h:
 
-/usr/include/c++/11/bits/regex_scanner.h:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
-/home/cc/vectorDB/src/include/spdlog/fmt/bundled/format-inl.h:
+/usr/include/string.h:
 
-/usr/include/c++/11/bits/regex_executor.tcc:
+/usr/include/stdio.h:
 
-/usr/include/c++/11/tr1/modified_bessel_func.tcc:
+/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/sched.h:
+
+/usr/include/rocksdb/write_buffer_manager.h:
+
+/usr/include/rocksdb/write_batch_base.h:
+
+/usr/include/rocksdb/write_batch.h:
+
+/usr/include/rocksdb/version.h:
+
+/usr/include/rocksdb/utilities/table_properties_collectors.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512erintrin.h:
+
+/usr/include/rocksdb/universal_compaction.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
+
+/usr/include/rocksdb/types.h:
+
+/usr/include/rocksdb/transaction_log.h:
+
+/usr/include/rocksdb/trace_record.h:
+
+/usr/include/rocksdb/trace_reader_writer.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/rocksdb/thread_status.h:
+
+/usr/include/rocksdb/table_reader_caller.h:
+
+/usr/include/rocksdb/table_properties.h:
+
+/usr/include/rocksdb/status.h:
+
+/usr/include/rocksdb/snapshot.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124fmapsintrin.h:
+
+/usr/include/rocksdb/slice.h:
+
+/usr/include/rocksdb/options.h:
+
+/usr/include/rocksdb/metadata.h:
+
+/usr/include/rocksdb/memtablerep.h:
+
+/usr/include/rocksdb/memory_allocator.h:
+
+/usr/include/rocksdb/listener.h:
+
+/usr/include/rocksdb/iterator.h:
+
+/usr/include/rocksdb/io_status.h:
+
+/usr/include/rocksdb/env.h:
+
+/usr/include/rocksdb/db.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:
+
+/usr/include/rocksdb/configurable.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/fxsrintrin.h:
+
+/usr/include/rocksdb/comparator.h:
 
 /usr/include/c++/11/bits/regex_compiler.h:
 
@@ -991,6 +1099,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/node_handle.h:
 
+/usr/include/rocksdb/iterator_base.h:
+
 /usr/include/c++/11/bits/nested_exception.h:
 
 /usr/include/x86_64-linux-gnu/sys/stat.h:
@@ -1002,8 +1112,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/c++/11/bits/locale_facets.tcc:
 
 /usr/include/c++/11/bits/locale_facets.h:
-
-/usr/include/c++/11/bits/deque.tcc:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmiintrin.h:
 
@@ -1018,6 +1126,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
 
 /usr/include/c++/11/bits/functional_hash.h:
+
+/usr/include/c++/11/cstdarg:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
 
@@ -1051,6 +1161,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/hash_bytes.h:
 
+/home/cc/vectorDB/src/include/index/scalar_storage.h:
+
 /usr/include/c++/11/bits/basic_string.h:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
@@ -1080,6 +1192,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/hnswlib/space_ip.h:
 
 /home/cc/vectorDB/src/include/spdlog/details/os-inl.h:
+
+/usr/include/c++/11/optional:
 
 /usr/include/x86_64-linux-gnu/bits/signum-generic.h:
 
@@ -1127,13 +1241,35 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/locale_conv.h:
 
-/usr/include/c++/11/bits/enable_special_members.h:
+/usr/include/c++/11/bits/locale_classes.h:
+
+/usr/include/c++/11/bits/postypes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bitalgintrin.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/ifaddrs.h:
+
+/usr/include/c++/11/bits/localefwd.h:
+
+/home/cc/vectorDB/src/include/spdlog/tweakme.h:
+
+/usr/include/c++/11/utility:
 
 /home/cc/vectorDB/src/include/hnswlib/stop_condition.h:
 
 /usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
+
+/usr/include/strings.h:
+
+/usr/include/rpc/netdb.h:
+
+/home/cc/vectorDB/src/include/spdlog/version.h:
+
+/home/cc/vectorDB/src/include/rapidjson/internal/ieee754.h:
 
 /usr/include/c++/11/unordered_set:
 
@@ -1157,27 +1293,9 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/charconv.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/c++/11/bits/locale_classes.h:
-
-/usr/include/c++/11/bits/postypes.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bitalgintrin.h:
-
-/usr/include/asm-generic/socket.h:
-
-/usr/include/ifaddrs.h:
-
 /home/cc/vectorDB/src/include/spdlog/details/log_msg_buffer-inl.h:
 
 /home/cc/vectorDB/src/include/spdlog/spdlog.h:
-
-/usr/include/c++/11/bits/atomic_lockfree_defines.h:
-
-/home/cc/vectorDB/src/include/rapidjson/stream.h:
 
 /usr/include/c++/11/bits/codecvt.h:
 
@@ -1186,6 +1304,10 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/rapidjson/internal/meta.h:
 
 /usr/include/c++/11/bits/exception.h:
+
+/usr/include/c++/11/bits/regex_executor.tcc:
+
+/usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/statx.h:
 
@@ -1202,6 +1324,14 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/rapidjson/error/error.h:
 
 /home/cc/vectorDB/src/include/spdlog/details/log_msg.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
+/usr/include/stdint.h:
+
+/home/cc/vectorDB/src/include/faiss/Index.h:
+
+/usr/include/c++/11/ratio:
 
 /home/cc/vectorDB/src/include/faiss/impl/platform_macros.h:
 
@@ -1221,9 +1351,21 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/spdlog/formatter.h:
 
-/usr/include/c++/11/ratio:
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
+
+/home/cc/vectorDB/src/include/rapidjson/stream.h:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/home/cc/vectorDB/src/include/database/vector_database.h:
+
+/usr/include/c++/11/csignal:
 
 /home/cc/vectorDB/src/include/rapidjson/rapidjson.h:
+
+/usr/include/stdlib.h:
+
+/home/cc/vectorDB/src/include/spdlog/common.h:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
@@ -1241,8 +1383,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/common/constants.h:
 
-/usr/include/stdio.h:
-
 /home/cc/vectorDB/src/include/index/hnswlib_index.h:
 
 /home/cc/vectorDB/src/httpserver/http_server.cpp:
@@ -1258,6 +1398,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/c++/11/cstring:
+
+/usr/include/rocksdb/multi_scan.h:
 
 /usr/include/c++/11/bits/predefined_ops.h:
 
@@ -1288,6 +1430,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/c++/11/set:
 
 /home/cc/vectorDB/src/include/hnswlib/visited_list_pool.h:
+
+/usr/include/c++/11/bits/enable_special_members.h:
 
 /usr/include/c++/11/bits/algorithmfwd.h:
 
@@ -1321,6 +1465,10 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/spdlog/sinks/sink.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16vlintrin.h:
+
+/usr/include/rocksdb/advanced_options.h:
+
 /home/cc/vectorDB/src/include/rapidjson/memorystream.h:
 
 /usr/include/linux/param.h:
@@ -1345,6 +1493,10 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/spdlog/details/null_mutex.h:
 
+/usr/include/c++/11/bits/regex_compiler.tcc:
+
+/usr/include/c++/11/iterator:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /home/cc/vectorDB/src/include/spdlog/logger.h:
@@ -1358,16 +1510,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /home/cc/vectorDB/src/include/spdlog/details/fmt_helper.h:
 
 /home/cc/vectorDB/src/include/spdlog/sinks/ansicolor_sink-inl.h:
-
-/usr/include/c++/11/iterator:
-
-/usr/include/c++/11/bits/regex_compiler.tcc:
-
-/usr/include/c++/11/bits/localefwd.h:
-
-/home/cc/vectorDB/src/include/spdlog/tweakme.h:
-
-/usr/include/c++/11/utility:
 
 /home/cc/vectorDB/src/include/spdlog/details/log_msg_buffer.h:
 
@@ -1417,6 +1559,10 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /home/cc/vectorDB/src/include/spdlog/fmt/bundled/base.h:
 
+/home/cc/vectorDB/src/include/spdlog/fmt/bundled/format-inl.h:
+
+/usr/include/c++/11/bits/regex_scanner.h:
+
 /usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/c++/11/bits/stl_multiset.h:
@@ -1457,6 +1603,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:
 
+/usr/include/rocksdb/port_defs.h:
+
 /usr/include/c++/11/bits/regex_scanner.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
@@ -1468,6 +1616,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/rocksdb/customizable.h:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
@@ -1523,17 +1673,13 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
-/usr/include/x86_64-linux-gnu/bits/in.h:
-
-/home/cc/vectorDB/src/include/faiss/Index.h:
-
-/usr/include/stdint.h:
-
 /home/cc/vectorDB/src/include/spdlog/spdlog-inl.h:
 
 /usr/include/c++/11/bits/stl_heap.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/rocksdb/wide_columns.h:
 
 /usr/include/netinet/in.h:
 
@@ -1544,6 +1690,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/c++/11/tr1/ell_integral.tcc:
 
 /usr/include/c++/11/bits/stl_relops.h:
+
+/usr/include/rocksdb/block_cache_trace_writer.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
@@ -1560,6 +1708,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/pthread.h:
 
 /usr/include/c++/11/bits/stl_map.h:
+
+/usr/include/rocksdb/sst_partitioner.h:
 
 /usr/include/c++/11/bits/stl_multimap.h:
 
@@ -1587,9 +1737,9 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/bits/unique_lock.h:
 
-/usr/include/c++/11/locale:
-
 /usr/include/c++/11/bits/list.tcc:
+
+/usr/include/c++/11/locale:
 
 /usr/include/c++/11/bits/unordered_map.h:
 
@@ -1621,7 +1771,13 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/chrono:
 
-/usr/include/c++/11/csignal:
+/usr/include/signal.h:
+
+/usr/include/rocksdb/data_structure.h:
+
+/usr/include/c++/11/bits/hashtable.h:
+
+/usr/include/c++/11/cmath:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
@@ -1675,17 +1831,25 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
 
+/usr/include/rocksdb/utilities/write_batch_with_index.h:
+
 /usr/include/c++/11/ostream:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/c++/11/pstl/execution_defs.h:
 
+/usr/include/rocksdb/functor_wrapper.h:
+
 /usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/11/bits/ptr_traits.h:
 
 /usr/include/c++/11/pstl/glue_memory_defs.h:
+
+/usr/include/rocksdb/user_write_callback.h:
+
+/usr/include/rocksdb/sst_file_writer.h:
 
 /usr/include/c++/11/queue:
 
@@ -1697,13 +1861,11 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
+/usr/include/rocksdb/system_clock.h:
+
 /usr/include/c++/11/bits/unique_ptr.h:
 
 /usr/include/c++/11/string:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/bits/socket.h:
 
@@ -1711,13 +1873,19 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/c++/11/string_view:
 
+/usr/include/rocksdb/compression_type.h:
+
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
 /usr/include/c++/11/system_error:
 
+/usr/include/rocksdb/rocksdb_namespace.h:
+
 /usr/include/c++/11/cstdio:
 
 /usr/include/c++/11/thread:
+
+/usr/include/rocksdb/file_checksum.h:
 
 /usr/include/c++/11/cstdlib:
 
@@ -1734,6 +1902,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 /usr/include/c++/11/bits/atomic_base.h:
 
 /usr/include/c++/11/tr1/legendre_function.tcc:
+
+/usr/include/rocksdb/compaction_job_stats.h:
 
 /home/cc/vectorDB/src/include/spdlog/pattern_formatter-inl.h:
 
@@ -1761,12 +1931,6 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/limits.h:
 
-/usr/include/c++/11/bits/hashtable.h:
-
-/usr/include/c++/11/cmath:
-
-/usr/include/signal.h:
-
 /usr/include/linux/falloc.h:
 
 /home/cc/vectorDB/src/include/spdlog/mdc.h:
@@ -1781,16 +1945,8 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o: /home/cc/vectorDB/src/ht
 
 /usr/include/resolv.h:
 
-/home/cc/vectorDB/src/include/rapidjson/internal/ieee754.h:
+/usr/include/rocksdb/attribute_groups.h:
 
-/home/cc/vectorDB/src/include/spdlog/version.h:
+/usr/include/rocksdb/cache.h:
 
-/usr/include/strings.h:
-
-/usr/include/rpc/netdb.h:
-
-/usr/include/sched.h:
-
-/home/cc/vectorDB/src/include/spdlog/common.h:
-
-/usr/include/stdlib.h:
+/usr/include/rocksdb/cleanable.h:

@@ -168,6 +168,19 @@ vdb_server/fast:
 	$(MAKE) $(MAKESILENT) -f vdbserver/CMakeFiles/vdb_server.dir/build.make vdbserver/CMakeFiles/vdb_server.dir/build
 .PHONY : vdb_server/fast
 
+#=============================================================================
+# Target rules for targets named database
+
+# Build rule for target.
+database: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 database
+.PHONY : database
+
+# fast build rule for target.
+database/fast:
+	$(MAKE) $(MAKESILENT) -f database/CMakeFiles/database.dir/build.make database/CMakeFiles/database.dir/build
+.PHONY : database/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -176,6 +189,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... database"
 	@echo "... httpserver"
 	@echo "... index"
 	@echo "... logger"

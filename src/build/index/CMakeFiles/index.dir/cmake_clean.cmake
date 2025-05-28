@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/index.dir/hnswlib_index.cpp.o.d"
   "CMakeFiles/index.dir/index_factory.cpp.o"
   "CMakeFiles/index.dir/index_factory.cpp.o.d"
+  "CMakeFiles/index.dir/scalar_storage.cpp.o"
+  "CMakeFiles/index.dir/scalar_storage.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

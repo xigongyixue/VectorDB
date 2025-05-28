@@ -202,6 +202,30 @@ index_factory.cpp.s:
 	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/index_factory.cpp.s
 .PHONY : index_factory.cpp.s
 
+scalar_storage.o: scalar_storage.cpp.o
+.PHONY : scalar_storage.o
+
+# target to build an object file
+scalar_storage.cpp.o:
+	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/scalar_storage.cpp.o
+.PHONY : scalar_storage.cpp.o
+
+scalar_storage.i: scalar_storage.cpp.i
+.PHONY : scalar_storage.i
+
+# target to preprocess a source file
+scalar_storage.cpp.i:
+	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/scalar_storage.cpp.i
+.PHONY : scalar_storage.cpp.i
+
+scalar_storage.s: scalar_storage.cpp.s
+.PHONY : scalar_storage.s
+
+# target to generate assembly for a file
+scalar_storage.cpp.s:
+	cd /home/cc/vectorDB/src/build && $(MAKE) $(MAKESILENT) -f index/CMakeFiles/index.dir/build.make index/CMakeFiles/index.dir/scalar_storage.cpp.s
+.PHONY : scalar_storage.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -220,6 +244,9 @@ help:
 	@echo "... index_factory.o"
 	@echo "... index_factory.i"
 	@echo "... index_factory.s"
+	@echo "... scalar_storage.o"
+	@echo "... scalar_storage.i"
+	@echo "... scalar_storage.s"
 .PHONY : help
 
 

@@ -1,6 +1,13 @@
 #include <vector>
+#include <iostream>
+#include <typeinfo>
 
 #include "index/faiss_index.h"
+#include "logger/logger.h"
+#include "common/constants.h" 
+
+#include <faiss/IndexIDMap.h>
+#include <faiss/IndexFlat.h>
 
 FaissIndex::FaissIndex(faiss::Index* index) : index(index) {}
 
@@ -17,5 +24,26 @@ std::pair<std::vector<long> , std::vector<float> > FaissIndex::search_vectors(co
     std::vector<long> indices(num_queries * k); // 查询结果
     std::vector<float> distances(num_queries * k); // 查询结果距离
     index->search(num_queries, query.data(), k, distances.data(), indices.data()); // 执行查询
+
+    GlobalLogger->debug("Retrieved values:");
+    for (size_t i = 0; i < indices.size(); ++i) {
+        if (indices[i] != -1) {
+            GlobalLogger->debug("ID: {}, Distance: {}", indices[i], distances[i]);
+        } else {
+            GlobalLogger->debug("No specific value found");
+        }
+    }
+
     return {indices, distances}; // 返回每个查询向量的KNN的{向量ID,距离}
+}
+
+void FaissIndex::remove_vectors(const std::vector<long>& ids) { 
+    faiss::IndexIDMap* id_map = dynamic_cast<faiss::IndexIDMap*>(index);
+    if (id_map) {
+        // 初始化IDSelectorBatch对象
+        faiss::IDSelectorBatch selector(ids.size(), ids.data());
+        id_map->remove_ids(selector);
+    } else {
+        throw std::runtime_error("Underlying Faiss index is not an IndexIDMap");
+    }
 }

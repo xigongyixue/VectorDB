@@ -98,6 +98,7 @@ vdbserver/vdb_server: vdbserver/CMakeFiles/vdb_server.dir/build.make
 vdbserver/vdb_server: /home/cc/vectorDB/src/lib/liblogger.so
 vdbserver/vdb_server: /home/cc/vectorDB/src/lib/libindex.so
 vdbserver/vdb_server: /home/cc/vectorDB/src/lib/libhttpserver.so
+vdbserver/vdb_server: /home/cc/vectorDB/src/lib/libdatabase.so
 vdbserver/vdb_server: /usr/local/lib/libfaiss.so
 vdbserver/vdb_server: vdbserver/CMakeFiles/vdb_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cc/vectorDB/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable vdb_server"

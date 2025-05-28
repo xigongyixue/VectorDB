@@ -6,3 +6,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"vectors":[0.5], "k":2, "i
 # hnsw索引测试
 curl -X POST -H "Content-Type: application/json" -d '{"vectors":[0.2], "id":3, "indexType": "HNSW"}' http://localhost:8000/insert
 curl -X POST -H "Content-Type: application/json" -d '{"vectors":[0.5], "k":2, "indexType": "HNSW"}' http://localhost:8000/search
+
+# 混合索引测试
+curl -X POST -H "Content-Type: application/json" -d '{"vectors":[0.555555], "id":3, "indexType": "FLAT", "Name":"hello", "Ci":1111}' http://localhost:8000/upsert
+curl -X POST -H "Content-Type: application/json" -d '{"id":3}' http://localhost:8000/query

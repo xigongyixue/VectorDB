@@ -297,14 +297,79 @@ vdbserver/CMakeFiles/vdb_server.dir/vdb_server.cpp.o: \
  /home/cc/vectorDB/src/include/spdlog/spdlog-inl.h \
  /home/cc/vectorDB/src/include/index/index_factory.h \
  /home/cc/vectorDB/src/include/httpserver/http_server.h \
+ /home/cc/vectorDB/src/include/database/vector_database.h \
+ /home/cc/vectorDB/src/include/index/scalar_storage.h \
+ /usr/include/rocksdb/db.h /usr/include/rocksdb/attribute_groups.h \
+ /usr/include/rocksdb/iterator_base.h /usr/include/rocksdb/cleanable.h \
+ /usr/include/rocksdb/rocksdb_namespace.h /usr/include/rocksdb/slice.h \
+ /usr/include/rocksdb/status.h /usr/include/rocksdb/wide_columns.h \
+ /usr/include/c++/11/ostream /usr/include/c++/11/ios \
+ /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/basic_ios.tcc \
+ /usr/include/c++/11/bits/ostream.tcc \
+ /usr/include/rocksdb/block_cache_trace_writer.h \
+ /usr/include/rocksdb/options.h /usr/include/c++/11/optional \
+ /usr/include/rocksdb/advanced_options.h /usr/include/rocksdb/cache.h \
+ /usr/include/rocksdb/compression_type.h /usr/include/rocksdb/types.h \
+ /usr/include/rocksdb/data_structure.h \
+ /usr/include/rocksdb/memory_allocator.h \
+ /usr/include/rocksdb/customizable.h /usr/include/rocksdb/configurable.h \
+ /usr/include/c++/11/unordered_set \
+ /usr/include/c++/11/bits/unordered_set.h \
+ /usr/include/rocksdb/memtablerep.h /usr/include/c++/11/stdlib.h \
+ /usr/include/rocksdb/universal_compaction.h \
+ /usr/include/rocksdb/comparator.h /usr/include/rocksdb/env.h \
+ /usr/include/c++/11/cstdarg /usr/include/rocksdb/functor_wrapper.h \
+ /usr/include/rocksdb/port_defs.h /usr/include/rocksdb/thread_status.h \
+ /usr/include/rocksdb/file_checksum.h /usr/include/rocksdb/listener.h \
+ /usr/include/rocksdb/compaction_job_stats.h \
+ /usr/include/rocksdb/io_status.h /usr/include/rocksdb/table_properties.h \
+ /usr/include/rocksdb/sst_partitioner.h /usr/include/rocksdb/version.h \
+ /usr/include/rocksdb/write_buffer_manager.h /usr/include/c++/11/list \
+ /usr/include/c++/11/bits/stl_list.h /usr/include/c++/11/bits/list.tcc \
+ /usr/include/rocksdb/system_clock.h \
+ /usr/include/rocksdb/table_reader_caller.h \
+ /usr/include/rocksdb/trace_reader_writer.h \
+ /usr/include/rocksdb/trace_record.h /usr/include/rocksdb/iterator.h \
+ /usr/include/rocksdb/metadata.h /usr/include/rocksdb/multi_scan.h \
+ /usr/include/rocksdb/snapshot.h /usr/include/rocksdb/sst_file_writer.h \
+ /usr/include/rocksdb/transaction_log.h \
+ /usr/include/rocksdb/write_batch.h \
+ /usr/include/rocksdb/write_batch_base.h \
+ /usr/include/rocksdb/user_write_callback.h \
+ /usr/include/rocksdb/utilities/table_properties_collectors.h \
+ /usr/include/rocksdb/utilities/write_batch_with_index.h \
+ /home/cc/vectorDB/src/include/rapidjson/document.h \
+ /home/cc/vectorDB/src/include/rapidjson/reader.h \
+ /home/cc/vectorDB/src/include/rapidjson/allocators.h \
+ /home/cc/vectorDB/src/include/rapidjson/rapidjson.h \
+ /usr/include/inttypes.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/meta.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/../rapidjson.h \
+ /home/cc/vectorDB/src/include/rapidjson/stream.h \
+ /home/cc/vectorDB/src/include/rapidjson/encodings.h \
+ /home/cc/vectorDB/src/include/rapidjson/encodedstream.h \
+ /home/cc/vectorDB/src/include/rapidjson/memorystream.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/clzll.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/stack.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/../allocators.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/swap.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/strtod.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/ieee754.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/biginteger.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/diyfp.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/clzll.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/pow10.h \
+ /home/cc/vectorDB/src/include/rapidjson/error/error.h \
+ /home/cc/vectorDB/src/include/rapidjson/error/../rapidjson.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/strfunc.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/../stream.h \
+ /home/cc/vectorDB/src/include/rapidjson/internal/../rapidjson.h \
  /home/cc/vectorDB/src/include/index/faiss_index.h \
  /home/cc/vectorDB/src/include/faiss/Index.h \
  /home/cc/vectorDB/src/include/faiss/MetricType.h \
  /home/cc/vectorDB/src/include/faiss/impl/platform_macros.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/istream \
- /usr/include/c++/11/ios /usr/include/c++/11/bits/basic_ios.h \
- /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
- /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc \
  /home/cc/vectorDB/src/include/httpserver/httplib.h \
@@ -359,9 +424,7 @@ vdbserver/CMakeFiles/vdb_server.dir/vdb_server.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/iomanip \
  /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/iostream \
- /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
- /usr/include/c++/11/bits/list.tcc /usr/include/c++/11/random \
- /usr/include/c++/11/bits/random.h \
+ /usr/include/c++/11/random /usr/include/c++/11/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
  /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h \
@@ -381,32 +444,4 @@ vdbserver/CMakeFiles/vdb_server.dir/vdb_server.cpp.o: \
  /usr/include/c++/11/bits/regex_executor.h \
  /usr/include/c++/11/bits/regex_executor.tcc /usr/include/c++/11/set \
  /usr/include/c++/11/bits/stl_set.h \
- /usr/include/c++/11/bits/stl_multiset.h \
- /usr/include/c++/11/unordered_set \
- /usr/include/c++/11/bits/unordered_set.h \
- /home/cc/vectorDB/src/include/rapidjson/document.h \
- /home/cc/vectorDB/src/include/rapidjson/reader.h \
- /home/cc/vectorDB/src/include/rapidjson/allocators.h \
- /home/cc/vectorDB/src/include/rapidjson/rapidjson.h \
- /usr/include/inttypes.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/meta.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/../rapidjson.h \
- /home/cc/vectorDB/src/include/rapidjson/stream.h \
- /home/cc/vectorDB/src/include/rapidjson/encodings.h \
- /home/cc/vectorDB/src/include/rapidjson/encodedstream.h \
- /home/cc/vectorDB/src/include/rapidjson/memorystream.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/clzll.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/stack.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/../allocators.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/swap.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/strtod.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/ieee754.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/biginteger.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/diyfp.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/clzll.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/pow10.h \
- /home/cc/vectorDB/src/include/rapidjson/error/error.h \
- /home/cc/vectorDB/src/include/rapidjson/error/../rapidjson.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/strfunc.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/../stream.h \
- /home/cc/vectorDB/src/include/rapidjson/internal/../rapidjson.h
+ /usr/include/c++/11/bits/stl_multiset.h

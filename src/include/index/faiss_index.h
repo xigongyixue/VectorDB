@@ -14,6 +14,9 @@ class FaissIndex {
         // 返回找到的向量标签和相应的距离
         std::pair<std::vector<long> , std::vector<float> > search_vectors(const std::vector<float>& query, int k);
 
+        // 根据id删除向量
+        void remove_vectors(const std::vector<long>& ids); 
+
     private:
         faiss::Index* index;
 };

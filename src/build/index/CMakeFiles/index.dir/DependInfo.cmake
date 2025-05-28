@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/cc/vectorDB/src/index/faiss_index.cpp" "index/CMakeFiles/index.dir/faiss_index.cpp.o" "gcc" "index/CMakeFiles/index.dir/faiss_index.cpp.o.d"
   "/home/cc/vectorDB/src/index/hnswlib_index.cpp" "index/CMakeFiles/index.dir/hnswlib_index.cpp.o" "gcc" "index/CMakeFiles/index.dir/hnswlib_index.cpp.o.d"
   "/home/cc/vectorDB/src/index/index_factory.cpp" "index/CMakeFiles/index.dir/index_factory.cpp.o" "gcc" "index/CMakeFiles/index.dir/index_factory.cpp.o.d"
+  "/home/cc/vectorDB/src/index/scalar_storage.cpp" "index/CMakeFiles/index.dir/scalar_storage.cpp.o" "gcc" "index/CMakeFiles/index.dir/scalar_storage.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

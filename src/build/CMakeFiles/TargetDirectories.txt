@@ -12,3 +12,6 @@
 /home/cc/vectorDB/src/build/vdbserver/CMakeFiles/vdb_server.dir
 /home/cc/vectorDB/src/build/vdbserver/CMakeFiles/edit_cache.dir
 /home/cc/vectorDB/src/build/vdbserver/CMakeFiles/rebuild_cache.dir
+/home/cc/vectorDB/src/build/database/CMakeFiles/database.dir
+/home/cc/vectorDB/src/build/database/CMakeFiles/edit_cache.dir
+/home/cc/vectorDB/src/build/database/CMakeFiles/rebuild_cache.dir

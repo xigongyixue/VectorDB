@@ -4,6 +4,7 @@
 httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o
  /home/cc/vectorDB/src/httpserver/http_server.cpp
  /home/cc/vectorDB/src/include/common/constants.h
+ /home/cc/vectorDB/src/include/database/vector_database.h
  /home/cc/vectorDB/src/include/faiss/Index.h
  /home/cc/vectorDB/src/include/faiss/MetricType.h
  /home/cc/vectorDB/src/include/faiss/impl/platform_macros.h
@@ -19,6 +20,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o
  /home/cc/vectorDB/src/include/index/faiss_index.h
  /home/cc/vectorDB/src/include/index/hnswlib_index.h
  /home/cc/vectorDB/src/include/index/index_factory.h
+ /home/cc/vectorDB/src/include/index/scalar_storage.h
  /home/cc/vectorDB/src/include/logger/logger.h
  /home/cc/vectorDB/src/include/rapidjson/allocators.h
  /home/cc/vectorDB/src/include/rapidjson/document.h
@@ -230,6 +232,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o
  /usr/include/c++/11/cmath
  /usr/include/c++/11/condition_variable
  /usr/include/c++/11/csignal
+ /usr/include/c++/11/cstdarg
  /usr/include/c++/11/cstddef
  /usr/include/c++/11/cstdint
  /usr/include/c++/11/cstdio
@@ -267,6 +270,7 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o
  /usr/include/c++/11/mutex
  /usr/include/c++/11/new
  /usr/include/c++/11/numeric
+ /usr/include/c++/11/optional
  /usr/include/c++/11/ostream
  /usr/include/c++/11/pstl/execution_defs.h
  /usr/include/c++/11/pstl/glue_algorithm_defs.h
@@ -333,6 +337,54 @@ httpserver/CMakeFiles/httpserver.dir/http_server.cpp.o
  /usr/include/netinet/tcp.h
  /usr/include/pthread.h
  /usr/include/resolv.h
+ /usr/include/rocksdb/advanced_options.h
+ /usr/include/rocksdb/attribute_groups.h
+ /usr/include/rocksdb/block_cache_trace_writer.h
+ /usr/include/rocksdb/cache.h
+ /usr/include/rocksdb/cleanable.h
+ /usr/include/rocksdb/compaction_job_stats.h
+ /usr/include/rocksdb/comparator.h
+ /usr/include/rocksdb/compression_type.h
+ /usr/include/rocksdb/configurable.h
+ /usr/include/rocksdb/customizable.h
+ /usr/include/rocksdb/data_structure.h
+ /usr/include/rocksdb/db.h
+ /usr/include/rocksdb/env.h
+ /usr/include/rocksdb/file_checksum.h
+ /usr/include/rocksdb/functor_wrapper.h
+ /usr/include/rocksdb/io_status.h
+ /usr/include/rocksdb/iterator.h
+ /usr/include/rocksdb/iterator_base.h
+ /usr/include/rocksdb/listener.h
+ /usr/include/rocksdb/memory_allocator.h
+ /usr/include/rocksdb/memtablerep.h
+ /usr/include/rocksdb/metadata.h
+ /usr/include/rocksdb/multi_scan.h
+ /usr/include/rocksdb/options.h
+ /usr/include/rocksdb/port_defs.h
+ /usr/include/rocksdb/rocksdb_namespace.h
+ /usr/include/rocksdb/slice.h
+ /usr/include/rocksdb/snapshot.h
+ /usr/include/rocksdb/sst_file_writer.h
+ /usr/include/rocksdb/sst_partitioner.h
+ /usr/include/rocksdb/status.h
+ /usr/include/rocksdb/system_clock.h
+ /usr/include/rocksdb/table_properties.h
+ /usr/include/rocksdb/table_reader_caller.h
+ /usr/include/rocksdb/thread_status.h
+ /usr/include/rocksdb/trace_reader_writer.h
+ /usr/include/rocksdb/trace_record.h
+ /usr/include/rocksdb/transaction_log.h
+ /usr/include/rocksdb/types.h
+ /usr/include/rocksdb/universal_compaction.h
+ /usr/include/rocksdb/user_write_callback.h
+ /usr/include/rocksdb/utilities/table_properties_collectors.h
+ /usr/include/rocksdb/utilities/write_batch_with_index.h
+ /usr/include/rocksdb/version.h
+ /usr/include/rocksdb/wide_columns.h
+ /usr/include/rocksdb/write_batch.h
+ /usr/include/rocksdb/write_batch_base.h
+ /usr/include/rocksdb/write_buffer_manager.h
  /usr/include/rpc/netdb.h
  /usr/include/sched.h
  /usr/include/signal.h
