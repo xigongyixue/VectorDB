@@ -2,7 +2,22 @@
 
 #include "index/index_factory.h"
 #include "hnswlib/hnswlib.h"
+#include "roaring/roaring.h" 
+
 #include <vector>
+
+
+class RoaringBitmapIDFilter : public hnswlib::BaseFilterFunctor {
+    public:
+        RoaringBitmapIDFilter(const roaring_bitmap_t* bitmap) : bitmap_(bitmap) {}
+
+        bool operator()(hnswlib::labeltype label) {
+            return roaring_bitmap_contains(bitmap_, static_cast<uint32_t>(label));
+        }
+
+    private:
+        const roaring_bitmap_t* bitmap_;
+};
 
 class HNSWLibIndex {
     public:
@@ -12,7 +27,7 @@ class HNSWLibIndex {
         void insert_vectors(const std::vector<float>& data, uint64_t label);
 
         // 单个向量查询
-        std::pair<std::vector<long>, std::vector<float> > search_vectors(const std::vector<float>& query, int k, int ef_search = 50);
+        std::pair<std::vector<long>, std::vector<float> > search_vectors(const std::vector<float>& query, int k, const roaring_bitmap_t* bitmap = nullptr, int ef_search = 50);
 
     private:
         int dim;

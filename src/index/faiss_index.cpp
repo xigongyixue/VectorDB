@@ -18,12 +18,20 @@ void FaissIndex::insert_vectors(const std::vector<float>& data, uint64_t label) 
     index->add_with_ids(1, data.data(), &id);
 }
 
-std::pair<std::vector<long> , std::vector<float> > FaissIndex::search_vectors(const std::vector<float>& query, int k) {
+std::pair<std::vector<long> , std::vector<float> > FaissIndex::search_vectors(const std::vector<float>& query, int k, const roaring_bitmap_t* bitmap) {
     int dim = index->d; // 向量的维度
     int num_queries = query.size() / dim; // 计算查询向量的数量
     std::vector<long> indices(num_queries * k); // 查询结果
     std::vector<float> distances(num_queries * k); // 查询结果距离
-    index->search(num_queries, query.data(), k, distances.data(), indices.data()); // 执行查询
+
+    // 根据传入的位图过滤id
+    faiss::SearchParameters search_params;
+    RoaringBitmapIDSelector selector(bitmap);
+    if(bitmap != nullptr) {
+        search_params.sel = &selector;
+    }
+
+    index->search(num_queries, query.data(), k, distances.data(), indices.data(), &search_params); // 执行查询
 
     GlobalLogger->debug("Retrieved values:");
     for (size_t i = 0; i < indices.size(); ++i) {

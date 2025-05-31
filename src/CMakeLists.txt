@@ -11,12 +11,14 @@ include_directories(${HEAD_PATH})
 
 # 链接库
 set(LOGGER logger)
+set(ROARING roaring)
 set(INDEX index)
 set(HTTP_SERVER httpserver)
 set(DATABASE database)
 
-add_subdirectory(httpserver)
+add_subdirectory(roaring)
 add_subdirectory(index)
 add_subdirectory(logger)
-add_subdirectory(vdbserver)
 add_subdirectory(database)
+add_subdirectory(httpserver)
+add_subdirectory(vdbserver)
