@@ -1,6 +1,7 @@
 #include "index/hnswlib_index.h"
+#include "logger/logger.h"
 
-HNSWLibIndex::HNSWLibIndex(int dim, int num_data, IndexFactory::MetricType metric, int M, int ef_construction) : dim(dim) { 
+HNSWLibIndex::HNSWLibIndex(int dim, int num_data, IndexFactory::MetricType metric, int M, int ef_construction) : max_elements(num_data) { 
     bool normalize = false;
     if (metric == IndexFactory::MetricType::L2) {
         space = new hnswlib::L2Space(dim);
@@ -39,4 +40,18 @@ std::pair<std::vector<long>, std::vector<float> > HNSWLibIndex::search_vectors(c
     } 
     
     return {indices, distances};
+}
+
+void HNSWLibIndex::saveIndex(const std::string& file_path) {
+    index->saveIndex(file_path);
+}
+
+void HNSWLibIndex::loadIndex(const std::string& file_path) {
+    std::ifstream file(file_path); // 尝试打开文件
+    if (file.good()) { // 检查文件是否存在
+        file.close();
+        index->loadIndex(file_path, space, max_elements);
+    } else {
+        GlobalLogger->warn("File not found: {}. Skipping loading index.", file_path);
+    }
 }

@@ -50,3 +50,20 @@ rapidjson::Document ScalarStorage::get_scalar(uint64_t id) {
 
     return data;
 }
+
+void ScalarStorage::put(const std::string& key, const std::string& value) {
+    rocksdb::Status status = db_->Put(rocksdb::WriteOptions(), key, value);
+    if (!status.ok()) {
+        GlobalLogger->error("Failed to put key-value pair: {}", status.ToString());
+    }
+}
+
+std::string ScalarStorage::get(const std::string& key) {
+    std::string value;
+    rocksdb::Status status = db_->Get(rocksdb::ReadOptions(), key, &value);
+    if (!status.ok()) {
+        GlobalLogger->error("Failed to get value for key {}: {}", key, status.ToString());
+        return "";
+    }
+    return value;
+}

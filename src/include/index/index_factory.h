@@ -1,5 +1,7 @@
 #pragma once
 
+#include "scalar_storage.h"
+
 #include <map>
 
 // 管理不同的向量索引类型
@@ -20,6 +22,8 @@ class IndexFactory {
     
         void init(IndexType type, int dim = 1, int num_data = 0, MetricType metric = MetricType::L2);
         void* getIndex(IndexType type) const;
+        void saveIndex(const std::string& folder_path, ScalarStorage& scalar_storage);
+        void loadIndex(const std::string& folder_path, ScalarStorage& scalar_storage);
 
     private:
 

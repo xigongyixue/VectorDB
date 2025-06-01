@@ -29,8 +29,12 @@ class HNSWLibIndex {
         // 单个向量查询
         std::pair<std::vector<long>, std::vector<float> > search_vectors(const std::vector<float>& query, int k, const roaring_bitmap_t* bitmap = nullptr, int ef_search = 50);
 
+        // 持久化
+        void saveIndex(const std::string& file_path);
+        void loadIndex(const std::string& file_path);
+
     private:
-        int dim;
+        size_t max_elements;
         hnswlib::SpaceInterface<float>* space; // 计算向量之间相似度
         hnswlib::HierarchicalNSW<float>* index; // 索引本身，负责存储数据和执行查询
 };

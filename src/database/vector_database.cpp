@@ -34,14 +34,18 @@ IndexFactory::IndexType VectorDatabase::getIndexTypeFromRequest(const rapidjson:
     return IndexFactory::IndexType::UNKNOWN;
 }
 
+// 在数据库启动时，使用快照和日志恢复
 void VectorDatabase::reloadDatabase() {
     GlobalLogger->info("Entering VectorDatabase::reloadDatabase()");
+
+    persistence_.loadSnapshot(scalar_storage_);
     std::string operation_type;
     rapidjson::Document json_data;
     persistence_.readNextWALLog(&operation_type, &json_data);
 
     while(!operation_type.empty()) {
         GlobalLogger->info("Operation Type: {}", operation_type);
+
         rapidjson::StringBuffer buffer;
         rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
         json_data.Accept(writer);
@@ -60,6 +64,10 @@ void VectorDatabase::reloadDatabase() {
         // 读取下一条日志
         persistence_.readNextWALLog(&operation_type, &json_data);
     }
+}
+
+void VectorDatabase::takeSnapshot() {
+    persistence_.takeSnapshot(scalar_storage_);
 }
 
 void VectorDatabase::upsert(uint64_t id, const rapidjson::Document& data, IndexFactory::IndexType index_type) {

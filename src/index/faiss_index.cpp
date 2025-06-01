@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <fstream>
 #include <typeinfo>
 
 #include "index/faiss_index.h"
@@ -8,6 +9,7 @@
 
 #include <faiss/IndexIDMap.h>
 #include <faiss/IndexFlat.h>
+#include <faiss/index_io.h> 
 
 FaissIndex::FaissIndex(faiss::Index* index) : index(index) {}
 
@@ -53,5 +55,22 @@ void FaissIndex::remove_vectors(const std::vector<long>& ids) {
         id_map->remove_ids(selector);
     } else {
         throw std::runtime_error("Underlying Faiss index is not an IndexIDMap");
+    }
+}
+
+void FaissIndex::saveIndex(const std::string& file_path) {
+    faiss::write_index(index, file_path.c_str());
+}
+
+void FaissIndex::loadIndex(const std::string& file_path) {
+    std::ifstream file(file_path); // 尝试打开文件
+    if (file.good()) { // 检查文件是否存在
+        file.close();
+        if (index != nullptr) {
+            delete index;
+        }
+        index = faiss::read_index(file_path.c_str());
+    } else {
+        GlobalLogger->warn("File not found: {}. Skipping loading index.", file_path);
     }
 }

@@ -32,6 +32,10 @@ class FaissIndex {
         // 根据id删除向量
         void remove_vectors(const std::vector<long>& ids); 
 
+        // 持久化
+        void saveIndex(const std::string& file_path);
+        void loadIndex(const std::string& file_path);
+
     private:
         faiss::Index* index;
 };

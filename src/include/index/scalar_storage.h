@@ -17,6 +17,10 @@ class ScalarStorage {
 
         rapidjson::Document get_scalar(uint64_t id);
 
+        void put(const std::string& key, const std::string& value);
+        
+        std::string get(const std::string& key);
+
     private:
         rocksdb::DB* db_;
 };
