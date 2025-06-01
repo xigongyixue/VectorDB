@@ -13,7 +13,54 @@
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>
 
-VectorDatabase::VectorDatabase(const std::string& db_path) : scalar_storage_(db_path) {}
+VectorDatabase::VectorDatabase(const std::string& db_path, const std::string& wal_path) : scalar_storage_(db_path) {
+    persistence_.init(wal_path);
+}
+
+void VectorDatabase::writeWALLog(const std::string& operation_type, const rapidjson::Document& json_data) {
+    std::string version = "1.0";
+    persistence_.writeWALLog(operation_type, json_data, version);
+}
+
+IndexFactory::IndexType VectorDatabase::getIndexTypeFromRequest(const rapidjson::Document& json_request) {
+    if (json_request.HasMember(REQUEST_INDEX_TYPE) && json_request[REQUEST_INDEX_TYPE].IsString()) {
+        std::string index_type_str = json_request[REQUEST_INDEX_TYPE].GetString();
+        if (index_type_str == INDEX_TYPE_FLAT) {
+            return IndexFactory::IndexType::FLAT;
+        } else if (index_type_str == INDEX_TYPE_HNSW) {
+            return IndexFactory::IndexType::HNSW;
+        }
+    }
+    return IndexFactory::IndexType::UNKNOWN;
+}
+
+void VectorDatabase::reloadDatabase() {
+    GlobalLogger->info("Entering VectorDatabase::reloadDatabase()");
+    std::string operation_type;
+    rapidjson::Document json_data;
+    persistence_.readNextWALLog(&operation_type, &json_data);
+
+    while(!operation_type.empty()) {
+        GlobalLogger->info("Operation Type: {}", operation_type);
+        rapidjson::StringBuffer buffer;
+        rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+        json_data.Accept(writer);
+        GlobalLogger->info("Read Line: {}", buffer.GetString());
+
+        if(operation_type == "upsert") {
+            uint64_t id = json_data[REQUEST_ID].GetUint64();
+            IndexFactory::IndexType index_type = getIndexTypeFromRequest(json_data);
+            upsert(id, json_data, index_type);
+        }
+
+        // 清空数据
+        rapidjson::Document().Swap(json_data); 
+        operation_type.clear();
+
+        // 读取下一条日志
+        persistence_.readNextWALLog(&operation_type, &json_data);
+    }
+}
 
 void VectorDatabase::upsert(uint64_t id, const rapidjson::Document& data, IndexFactory::IndexType index_type) {
     rapidjson::StringBuffer buffer;

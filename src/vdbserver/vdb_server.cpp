@@ -19,7 +19,8 @@ int main() {
 
     // 初始化VectorDatabase对象
     std::string db_path = "ScalarStorage"; // RocksDB路径
-    VectorDatabase vector_database(db_path);
+    std::string wal_path = "WALStorage";
+    VectorDatabase vector_database(db_path, wal_path);
     GlobalLogger->info("VectorDatabase initialized");
 
     // 创建并启动服务器
