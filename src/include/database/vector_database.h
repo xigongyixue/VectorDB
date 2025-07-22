@@ -27,9 +27,13 @@ class VectorDatabase
 
         void writeWALLog(const std::string& operation_type, const rapidjson::Document& json_data);
 
+        void writeWALLogWithID(uint64_t log_id, const std::string& data);
+
         void takeSnapshot();
 
         IndexFactory::IndexType getIndexTypeFromRequest(const rapidjson::Document& json_request);
+
+        int64_t getStartIndexID() const;
 
     private:
         ScalarStorage scalar_storage_;

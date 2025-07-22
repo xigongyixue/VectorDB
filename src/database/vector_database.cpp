@@ -22,6 +22,12 @@ void VectorDatabase::writeWALLog(const std::string& operation_type, const rapidj
     persistence_.writeWALLog(operation_type, json_data, version);
 }
 
+void VectorDatabase::writeWALLogWithID(uint64_t log_id, const std::string& data) {
+    std::string version = "1.0";
+    std::string operation_type = "upsert";
+    persistence_.writeWALRawLog(log_id, operation_type, data, version);
+}
+
 IndexFactory::IndexType VectorDatabase::getIndexTypeFromRequest(const rapidjson::Document& json_request) {
     if (json_request.HasMember(REQUEST_INDEX_TYPE) && json_request[REQUEST_INDEX_TYPE].IsString()) {
         std::string index_type_str = json_request[REQUEST_INDEX_TYPE].GetString();
@@ -68,6 +74,10 @@ void VectorDatabase::reloadDatabase() {
 
 void VectorDatabase::takeSnapshot() {
     persistence_.takeSnapshot(scalar_storage_);
+}
+
+int64_t VectorDatabase::getStartIndexID() const {
+    return persistence_.getID();
 }
 
 void VectorDatabase::upsert(uint64_t id, const rapidjson::Document& data, IndexFactory::IndexType index_type) {

@@ -22,6 +22,8 @@ class Persistence
 
         // 将一条操作日志写入预写日志文件，记录操作类型、JSON和版本信息
         void writeWALLog(const std::string& operation_type, const rapidjson::Document& json_data, const std::string& version);
+
+        void writeWALRawLog(uint64_t log_id, const std::string& operation_type, const std::string& raw_data, const std::string& version);
         
         // 读取下一条预写日志
         void readNextWALLog(std::string* operation_type, rapidjson::Document* json_data);

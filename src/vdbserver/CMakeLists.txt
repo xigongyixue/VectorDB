@@ -8,9 +8,10 @@ link_directories(${LIB_PATH})
 
 set(FAISS faiss)
 set(ROCKSDB rocksdb)
-set(THIRD_LIB ${FAISS} ${ROCKSDB})
+set(NURAFT nuraft) # 系统库
+set(THIRD_LIB ${FAISS} ${ROCKSDB} ${NURAFT})
 
-set(MY_LIB ${LOGGER} ${INDEX} ${HTTP_SERVER} ${DATABASE})
+set(MY_LIB ${LOGGER} ${INDEX} ${HTTP_SERVER} ${DATABASE} ${NURAFT_})
 
 set(ALL_LIB ${MY_LIB} ${THIRD_LIB})
 
