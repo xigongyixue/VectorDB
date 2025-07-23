@@ -4,7 +4,7 @@
 #include "index/faiss_index.h"
 #include "index/index_factory.h"
 #include "nuraft/raft_stuff.h"
-#include "httplib.h"
+#include "common/httplib.h"
 
 #include <rapidjson/document.h>
 #include <string>
